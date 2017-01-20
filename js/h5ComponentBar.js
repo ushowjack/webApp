@@ -8,7 +8,7 @@ var H5ComponentBar = function (Name,cfg) {
 
 	//创建一个基本图文组件对象，通过cfg对其进行配置
 	var component = new H5ComponentBase(Name,cfg);
-	var base = 200;
+	var base = 150;
 	var colors = ["#3B5","#09C","#F2F","#13C","#9C0"];
 
 	$.each(cfg.data,function(index, el) {
@@ -17,13 +17,13 @@ var H5ComponentBar = function (Name,cfg) {
 		// 创建jquery DOM元素对象
 		var line = $("<div class='line'></div>");
 		var name = $("<div class='name'></div>");
-		name.text(el[0]);
+		name.text(el[0] + ":");
 		var rate = $("<div class='rate'></div>");
 		rate.css({
-			width: el[1]/cfg.data[0][1]*100+"px",
-			height: '20px',
-			backgroundColor: el[2] || colors.pop(),
+			width: el[1]/cfg.data[0][1]*base+"px",
 		});
+		var bg = $("<div class='bg'></div>");
+		bg.css("backgroundColor", el[2] || colors.pop());
 		var per = $("<div class='per'></div>");
 		per.text(el[1]*100 + "%");
 
@@ -34,6 +34,7 @@ var H5ComponentBar = function (Name,cfg) {
 
 
 		line.append(name).append(rate).append(per);
+		rate.append(bg);
 		component.append(line);
 	});
 

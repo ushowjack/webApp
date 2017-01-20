@@ -21,12 +21,11 @@ body{
 }
 
 .h5_component_bar{
-    top: 50%;
     margin-top: -100px;
     background: #888;
 }
 .h5_component_bar .line{
-    padding: 10px;
+    margin: 15px 10px;
     clear: both;
     height: 20px;
     line-height: 20px;
@@ -36,15 +35,19 @@ body{
     width: 40px;
     height: 20px;
     text-align: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 .h5_component_bar .line .rate{
     float: left;
     height: 20px;
-    margin-right: 5px;    
+    margin-right: 15px;    
 }
+.h5_component_bar .line .rate .bg{
+    width: 100%;
+    height: 20px;
+}
+
 .h5_component_bar .line .per{
     float: left;
-    height: 20px;
-    margin-right: 5px;    
+    height: 20px;   
 }

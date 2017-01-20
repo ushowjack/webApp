@@ -19,8 +19,9 @@
 	</div>
 
 
-	
+
 	<script> 
+	// 一个配置文件主要有组件类型、文件说明、数据、还有设置样式
 		var cfg = {
 			type  : "point",
 			// text  : "你是不是很傻啊？",
@@ -37,11 +38,15 @@
  
 
 		}
+
+
 		var $h5 = new H5ComponentPoint("myName",cfg);
  
 		$h5.appendTo('.iphone');  
 
 		// 添加一个点击事件触发加载
+
+		// 添加点击载入载出事件
 		var load = false;
 		$("body").on('click', function(event) {
 			load = !load;

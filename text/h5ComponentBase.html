@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>h5ComponentBase</title>
+</head>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/h5ComponentBase.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentBase.css">
+
+<body> 
+<!-- 用于开发图文组件 --> 
+	<div class="iphone">
+		
+	</div>
+	<script> 
+		var cfg = {
+			type  : "base",
+			text  : "",
+			width : 514,
+			height: 306  ,
+			bg:"../image/p1_people.png",
+			css:{
+				bottom: 0,
+				opacity: 0
+			},
+			center: true,
+			animateIn: {
+				bottom: 80,
+				opacity: 1
+			},
+			animateOut: {
+				bottom: 0,
+				opacity: 0
+			},
+
+		}
+		var $h5 = new H5ComponentBase("myName",cfg);
+
+		$h5.appendTo('.iphone');  
+
+		// 添加一个点击事件触发加载
+		var load = false;
+		$("body").on('click', function(event) {
+			load = !load;
+			load ? $(".h5_component_base").trigger("onLoad") : $(".h5_component_base").trigger("onLeave");
+				
+			
+			event.preventDefault();
+			/* Act on the event */
+		});
+	</script>
+</body>
+</html>

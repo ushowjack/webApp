@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+	<meta charset="UTF-8">
+	<title>H5</title>
+</head>
+<!-- 基本资源库 -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/jquery.fullpage.min.js"></script>
+
+<!-- 自己的脚本文件 页和组件-->
+<script src="../js/h5ComponentBase.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentBase.css">
+
+<script src="../js/H5.js"></script>
+<link rel="stylesheet" href="../css/H5.css">
+
+<style>
+
+</style>
+
+
+<body>
+
+<script>
+	var h5 = new H5();
+	h5
+	.addPage("base")
+		.addComponent("base",{
+			text:"核心理念",
+			width : 400,
+			height: 100,
+			css:{
+				opacity: 0, 
+				top: 800,
+				backgroundColor: "#fff"
+			},
+			center: true,
+			animateIn: {
+				top: 300,
+				opacity: 1
+			},
+			animateOut: {
+				top: 800,
+				opacity: 0
+			},
+		})
+		.addComponent("base",{
+			text:"跟踪指导",
+			width : 400,
+			height: 100,
+			css:{
+				top: 400,
+				backgroundColor: "#fff"
+			},
+			center: true,
+		})
+	.addPage("sex")
+		.addComponent("base",{
+			text:"一对一",
+			width : 400,
+			height: 100,
+			css:{
+				top: 300,
+				backgroundColor: "#fff"
+			},
+			center: true,
+		})
+	.addPage("yellow")
+		.addComponent("base",{
+			text:"教育体系",
+			width : 400,
+			height: 100,
+			css:{
+				top: 400,
+				backgroundColor: "#fff"
+			},
+			center: true,
+		})
+	.addPage("red")
+		.addComponent("base",{
+			text:"好的嘛结束",
+			width : 400,
+			height: 100,
+			css:{
+				top: 400,
+				backgroundColor: "#fff"
+			},
+			center: true,
+		})
+	.loader();
+
+</script>
+</body>
+</html>

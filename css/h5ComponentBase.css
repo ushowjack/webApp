@@ -1,0 +1,24 @@
+/* 图文组件对象样式 */
+
+body{
+	padding: 0px;
+	margin: 0px;
+	/* background: #222; */
+	font-size: 12px;
+}
+.iphone{
+	width: 340px;
+	height: 540px;
+	background: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -170px;
+	margin-top: -270px;   
+}
+
+.h5_component{
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: absolute;  
+}

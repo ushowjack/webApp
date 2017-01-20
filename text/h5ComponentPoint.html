@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>h5ComponentPoint</title>
+</head>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/h5ComponentBase.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentBase.css">
+
+<script src="../js/h5ComponentPoint.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentPoint.css">
+
+<body> 
+
+<!-- 用于开发图文组件 --> 
+	<div class="iphone">
+		
+	</div>
+
+
+	
+	<script> 
+		var cfg = {
+			type  : "point",
+			// text  : "你是不是很傻啊？",
+            data:[
+                ['A项' , .4  ,'green'],
+                ['B项' , .2  ,'blue', 0 ,'-60%'],
+                ['C项' , .3  ,'red', 0 ,'120%']
+            ],
+        
+			width : 300,
+			height: 300,
+			// bg:"../image/p1_people.png",
+			center: true,
+ 
+
+		}
+		var $h5 = new H5ComponentPoint("myName",cfg);
+ 
+		$h5.appendTo('.iphone');  
+
+		// 添加一个点击事件触发加载
+		var load = false;
+		$("body").on('click', function(event) {
+			load = !load;
+			load ? $(".h5_component_"+cfg.type).trigger("onLoad") : $(".h5_component_"+cfg.type).trigger("onLeave");
+				
+			
+			event.preventDefault();
+			/* Act on the event */
+		});
+	</script>
+</body>
+</html>
+
+

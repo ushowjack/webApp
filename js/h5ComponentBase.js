@@ -19,7 +19,7 @@ var H5ComponentBase = function (Name,cfg) {
 	cfg.height && component.height(cfg.height/2);
 	cfg.text  && component.text(cfg.text);
 	cfg.css && component.css(cfg.css); 
-	cfg.width && component.css("backgroundImage"," url("+cfg.bg+")");
+	cfg.bg && component.css("backgroundImage"," url("+cfg.bg+")");
 	if (cfg.center === true) {
 		component.css({
 			left: "50%",

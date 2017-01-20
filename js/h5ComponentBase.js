@@ -30,12 +30,12 @@ var H5ComponentBase = function (Name,cfg) {
 	// 对component绑定时间，给组件添加类
 	component.on("onLeave",function () {
 		component.addClass(cls + '_leave').removeClass(cls + '_load');
-		cfg.animateOut && component.animate(cfg.animateOut,1000);
+		cfg.animateOut && component.animate(cfg.animateOut,700);
 		return false;
 	});
 	component.on("onLoad",function () {
 		component.addClass(cls + '_load').removeClass(cls + '_leave');
-		cfg.animateIn && component.animate(cfg.animateIn,1000);
+		cfg.animateIn && component.animate(cfg.animateIn,700);
 		return false;
 	}); 
 

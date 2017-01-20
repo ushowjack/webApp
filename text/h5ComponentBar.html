@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>h5ComponentBar</title>
+</head>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/h5ComponentBase.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentBase.css">
+
+<script src="../js/h5ComponentBar.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentBar.css">
+
+<body> 
+
+<!-- 用于开发图文组件 --> 
+	<div class="iphone">
+		
+	</div>
+
+
+
+	<script> 
+	// 一个配置文件主要有组件类型、文件说明、数据、还有设置样式
+		var cfg = {
+                type : 'bar',
+                
+                width : 530,
+                height : 600,
+                data:[
+                    ['Js' , .4  ,'#ff7676'],
+                    ['CSS3' , .1 ],
+                    ['HTML5' , .2  ],
+                    ['PHP' , .05  ],
+                    ['jQuery' , .35 ]
+                ],
+                css : {
+                    top:100,
+                    opacity:0
+                },
+                animateIn:{
+                    opacity:1,
+                    top:200,
+                },
+                animateOut:{
+                    opacity:0,
+                    top:100,
+                },
+                center : true,
+            }
+
+
+
+		var $h5 = new H5ComponentBar("myBar",cfg);
+ 
+		$h5.appendTo('.iphone');  
+
+		// 添加一个点击事件触发加载
+
+		// 添加点击载入载出事件
+		var load = false;
+		$("body").on('click', function(event) {
+			load = !load;
+			$(".h5_component_"+cfg.type).trigger(load ? "onLoad":"onLeave");
+				
+			
+			event.preventDefault();
+			/* Act on the event */
+		});
+	</script>
+</body>
+</html>
+
+

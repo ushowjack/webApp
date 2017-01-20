@@ -64,8 +64,8 @@ body{
 .h5_component_bar .line .per{
     float: left;
     opacity: 0;
-    -webkit-transition: all 1s 1.5s;
-    transition: all 1s 1.5s;    
+    -webkit-transition: all .5s 1.5s;
+    transition: all .5s 1.5s;    
     height: 15px;
     line-height: 15px;   
 }

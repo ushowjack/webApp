@@ -30,3 +30,29 @@ body{
     width: 100%;
     height: 100%;
 }
+.h5_component_polyline .text{
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.h5_component_polyline .textData{
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    
+    opacity: 0;
+   	transition: opacity 1s 1.7s;	
+   	-webkit-transition: opacity 1s 1.7s;	
+}
+
+.h5_component_polyline.h5_component_polyline_load .textData{
+    opacity: 1;
+}
+.h5_component_polyline.h5_component_polyline_leave .textData{
+	
+	/*这里实质上是为了提前让数据消失,利用display在transition下失效的特点来做的*/
+    opacity: 0;
+    display: none;
+}

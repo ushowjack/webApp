@@ -49,43 +49,69 @@ var H5ComponentPolyline = function (Name,cfg) {
 	ctx.stroke();
 	ctx.closePath();
 	
+	//	加入文字	
+	
+	for (var i =0; i < cfg.data.length; i++) {
+		var text = $("<div class='text'>"+cfg.data[i][0]+"</div>");
+		text.css({
+			width : w/ step/2,
+			top : h/2,
+			left : w * ( i + 0.5) / step/2,
+		});
+		text.appendTo(component);
+		
+	}
+	
+	//添加数据的文字以及其样式
+	for (var i =0; i < cfg.data.length; i++) {
+		var textData = $("<div class='textData'>"+cfg.data[i][1]*100+"%</div>");
+		textData.css({
+			width : w/ step/2,
+			top : (h - cfg.data[i][1] * h -40)/2,
+			left : w * ( i + 0.5) / step/2,
+			color : cfg.data[i][2] || " ",
+		});
+		textData.appendTo(component);
+	}
+	
+	
+	
 	var cns = $("<canvas id='canvas'></canvas>").get(0);
 	cns.width = cfg.width;
 	cns.height = cfg.height;
 	var ctx = cns.getContext("2d");
 	$(cns).appendTo(component);
 	
-	var per = 0;
+
 	
 	//这里把per提到全局变量的话有利于事件间的调用连贯性。
 	//clearInterval试过在事件间互相消除但会出现undefined的问题
 	//所以就在执行完之后对该setInterval进行销毁即可
 	component.on("onLoad",function () {
+		var per = 0;
+		for (var i = 0; i < 100; i++) {
+			setTimeout(function () {
+				per += 0.01;
+				polyDraw(per);
+			},i * 10 + 700);
+		}
+	});
 
-		var timerLoad = setInterval(function () {
-			if ( per <1 ) {
-				polyDraw( per);
-				per += 0.1;
-			}else{
-				clearInterval(timerLoad);	
-			}
-		},50);
-	});
 	component.on("onLeave",function () {
-		var timerLeave = setInterval(function () {
-			if ( per > 0 ) {
-				polyDraw( per);
-				per -= 0.1;
-			}else{
-				clearInterval(timerLeave);	
-			}
-		},50);
+		var per = 1;
+		for (var i = 0; i < 100; i++) {
+			setTimeout(function () {
+				per -= 0.01;
+				polyDraw(per);
+			},i *10);
+		}
 	});
+		
 	
 	//画折线图函数，函数被调用不在调用的作用域内，
 	//再者setInterval不能进行传参，只能传递事件参数
 	//	必须依赖于自身对全局变量的调用，故传参比较少
-	function polyDraw( per) {
+	function polyDraw(per) {
 		//清理canvas画布
 		ctx.clearRect( 0, 0, w, h);
 		

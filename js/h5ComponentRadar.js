@@ -18,14 +18,71 @@ var H5ComponentRadar = function (Name,cfg) {
 
 	var step = num + 1;
 
-	//	新建一个图层否则在清理ctx时会将网格也清除
+	//	新建一个底部图层
 	var cns = $("<canvas id='canvas'></canvas>").get(0);
 	cns.width = cfg.width;
 	cns.height = cfg.height;
 	var ctx = cns.getContext("2d");
 	$(cns).appendTo(component);
 	
+	function drawRadar() {
+		
+		var r = w/2 - 2;
+		
+		var num = cfg.data.length;
+		
+		for (var i =0; i < 10; i++) {
+			
+			ctx.beginPath();
+			
+			ctx.strokeStyle = "#888888";
+			ctx.lineWidth = 1;
+			ctx.fillStyle = i%2 ? "#f1f9ff" : "#99c0ff";
+			
+			for (var j =0; j < num +1; j++) {
+				var r = (w/2 - 2)/10 * (10 - i );
+				
+				var x = w/2 + r * Math.cos( 2*Math.PI/num * j );
+				var y = h/2 - r * Math.sin( 2*Math.PI/num * j );
+				
+				ctx.lineTo(x, y);
+			}	
+				ctx.closePath();
+				ctx.fill();
+		}
+		
+		
+		for (var j =0; j < num +1; j++) {
+			ctx.beginPath();
+			
+			ctx.strokeStyle = "#99c0ff";
+			ctx.lineWidth = 1;
+			
+			ctx.moveTo( w/2, h/2 );
+			
+			var r = w/2 - 2;
+			
+			var x = w/2 + r * Math.cos( 2*Math.PI/num * j );
+			var y = h/2 - r * Math.sin( 2*Math.PI/num * j );
+			
+			ctx.lineTo(x, y);
+
+			ctx.stroke();
+		}	
+		
+	drawRadar();
 	
+	//	新建一个数据图层
+	var cns = $("<canvas id='canvas'></canvas>").get(0);
+	cns.width = cfg.width;
+	cns.height = cfg.height;
+	var ctx = cns.getContext("2d");
+	$(cns).appendTo(component);
+
+			
+
+		
+	}
 	
 	
 

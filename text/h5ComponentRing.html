@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>h5ComponentBar</title>
+	<title>h5ComponentRing</title>
 </head>
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/h5ComponentBase.js"></script>
 <link rel="stylesheet" href="../css/h5ComponentBase.css">
 
-<script src="../js/h5ComponentRadar.js"></script>
-<link rel="stylesheet" href="../css/h5ComponentRadar.css">
+<!--引入h5ComponentPie组件-->
+<script src="../js/h5ComponentPie.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentPie.css">
+
+
+<script src="../js/h5ComponentRing.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentRing.css">
 
 <body> 
 
@@ -23,18 +28,12 @@
 	<script> 
 	// 一个配置文件主要有组件类型、文件说明、数据、还有设置样式
 		var cfg = {
-                type : 'radar',
+                type : 'ring',
                 
                 width : 400,
                 height : 400,
                 data:[
-                    ['CSS3' , .85 ],
-                    ['Js' , .1 ,'#ff7676'],
-                    ['PHP' , .23 ],
-                    ['Go' , .45 ],
-                    ['HTML5' , .58  ],
-                    ['C++' , .14 ],
-                    ['jQuery' , .15 ],
+                    ['Js' , .8,'#ff7676'],
                 ],
                 css : {
                     top:100,
@@ -53,7 +52,7 @@
 
 
 
-		var $h5 = new H5ComponentRadar("myRadar",cfg);
+		var $h5 = new H5ComponentRing("myRing",cfg);
  
 		$h5.appendTo('.iphone');  
 

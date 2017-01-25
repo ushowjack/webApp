@@ -43,8 +43,8 @@ body{
     text-align: center;
     
     opacity: 0;
-   	transition: opacity 1s 1.7s;	
-   	-webkit-transition: opacity 1s 1.7s;	
+   	/*transition: opacity 1s 1.7s;*/	
+   	/*-webkit-transition: opacity 1s 1.7s;*/	
 }
 
 .h5_component_polyline.h5_component_polyline_load .textData{

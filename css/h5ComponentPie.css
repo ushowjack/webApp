@@ -1,4 +1,4 @@
-/* 雷达图组件对象样式 */
+/* 饼图组件对象样式 */
 
 body{
 	padding: 0px;
@@ -19,18 +19,18 @@ body{
 	z-index: 1;
 }
 
-.h5_component_radar {
+.h5_component_pie {
 	bottom: 40%;
 }
 
-.h5_component_radar canvas{
+.h5_component_pie canvas{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-.h5_component_radar .text{
+.h5_component_pie .text{
     position: absolute;
     padding: 0 5px;
     text-align: center;
@@ -39,10 +39,10 @@ body{
     -webkit-transition: all 0.5s 1.3s;
     
 }
-.h5_component_radar.h5_component_radar_load .text{
+.h5_component_pie.h5_component_pie_load .text{
 	opacity: 1;
 }
-.h5_component_radar.h5_component_radar_leave .text{
+.h5_component_pie.h5_component_pie_leave .text{
 	opacity: 0;
 }
 

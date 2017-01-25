@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>h5ComponentBar</title>
+	<title>h5ComponentPie</title>
 </head>
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/h5ComponentBase.js"></script>
 <link rel="stylesheet" href="../css/h5ComponentBase.css">
 
-<script src="../js/h5ComponentRadar.js"></script>
-<link rel="stylesheet" href="../css/h5ComponentRadar.css">
+<script src="../js/h5ComponentPie.js"></script>
+<link rel="stylesheet" href="../css/h5ComponentPie.css">
 
 <body> 
 
@@ -23,18 +23,16 @@
 	<script> 
 	// 一个配置文件主要有组件类型、文件说明、数据、还有设置样式
 		var cfg = {
-                type : 'radar',
+                type : 'pie',
                 
                 width : 400,
                 height : 400,
                 data:[
-                    ['CSS3' , .85 ],
+                    ['CSS3' , .35 ],
                     ['Js' , .1 ,'#ff7676'],
                     ['PHP' , .23 ],
-                    ['Go' , .45 ],
-                    ['HTML5' , .58  ],
-                    ['C++' , .14 ],
-                    ['jQuery' , .15 ],
+                    ['HTML5' , .18  ],
+                    ['jQuery' , .14 ],
                 ],
                 css : {
                     top:100,
@@ -53,7 +51,7 @@
 
 
 
-		var $h5 = new H5ComponentRadar("myRadar",cfg);
+		var $h5 = new H5ComponentPie("myPie",cfg);
  
 		$h5.appendTo('.iphone');  
 

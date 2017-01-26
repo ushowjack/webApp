@@ -1,0 +1,119 @@
+/* 散点图组件对象样式 */
+
+body{
+	padding: 0px;
+	margin: 0px;
+	background: #222;
+	font-size: 12px;
+	z-index: 0;
+}
+.iphone{
+	width: 340px;
+	height: 540px;
+	background: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -170px;
+	margin-top: -270px;   
+	z-index: 1;
+}
+
+.h5_component_point {
+	bottom: 40%;
+}
+
+
+
+
+/* 添加 点击圆点后的阴影效果*/
+.h5_component_point .point.point_focus{
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+
+}
+/* 点击圆点后 在圆点后添加添加一个闪烁效果 */
+.h5_component_point .point.point_focus:after{
+	content: ' ';
+	/* 设置基本样式 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+   /*  left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -50%; */
+    border-radius: 50%;
+
+
+    -webkit-opacity:.5;
+
+    /* 这个继承父级元素的颜色，用法很赞！ */
+    /* 这个继承父级元素的颜色，用法很赞！ */
+    /* 这个继承父级元素的颜色，用法很赞！ */
+    /* 这个继承父级元素的颜色，用法很赞！ */
+    background-color: inherit;
+    /* 添加动画效果 缓进缓出的效果*/
+    -webkit-animation: breathe 3s infinite ease-in-out .5s;
+    z-index: -1;
+}
+
+/* 水波纹动画效果 */
+@-webkit-keyframes breathe{
+    0% {
+        -webkit-transform:scale(.5);
+        -webkit-opacity:.9;
+    }
+    95%{
+        -webkit-transform:scale(1.5);
+        -webkit-opacity:0;
+    }
+    100%{
+        -webkit-transform:scale(.9);
+        -webkit-opacity:0;
+    }
+}
+
+/* 设置 圆点载入载出大小和透明度的逐渐变化动画*/
+.h5_component_point .point{
+	z-index: 2;
+
+	border-radius: 50%;
+	-webkit-opacity:0;
+    -webkit-transform:scale(0.1);
+    -webkit-transition:all 1s;
+}
+.h5_component_point_load .point{
+    -webkit-opacity:1;
+    -webkit-transform:scale(1);
+}
+.h5_component_point_leave .point{
+    -webkit-opacity:0;
+    -webkit-transform:scale(0.1);
+}
+
+
+
+.h5_component_point .point_name{
+
+	font-size: 20px;
+
+	color: #fff;
+	line-height: 30px;
+	width: 100%;
+	text-align: center;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+}
+.h5_component_point .point_per{
+	color: #fff;
+
+	height: 30px;
+	width: 100%;
+	text-align: center;
+
+	position: absolute;
+	top: 50%;
+	margin-top: 10px;
+}

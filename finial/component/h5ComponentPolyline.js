@@ -28,8 +28,8 @@ var H5ComponentPolyline = function (Name,cfg) {
 	//设置画笔的参数
 	ctx.beginPath();
 	
-	ctx.strokeStyle = "#222";
-	ctx.lineWidth = 1;
+	ctx.strokeStyle = "#bbb";
+	ctx.lineWidth = 2;
 	
 	//画出横线线条
 	for(var i = 0; i < 11; i++){
@@ -116,8 +116,8 @@ var H5ComponentPolyline = function (Name,cfg) {
 			
 			ctx.beginPath();
 			
-			ctx.strokeStyle = "#f00";
-			ctx.fillStyle = "#ff0022";
+			ctx.strokeStyle = "#ff7676";
+			ctx.fillStyle = "#ff7676";
 			
 			ctx.moveTo(x, y);		
 			ctx.arc( x, y, 3, 0, 2*Math.PI);
@@ -130,9 +130,9 @@ var H5ComponentPolyline = function (Name,cfg) {
 		//画出折线
 	
 		ctx.beginPath();
-		ctx.strokeStyle = "#ff0022";
+		ctx.strokeStyle = "#ff7676";
 		ctx.lineWidth = 1;
-		ctx.fillStyle = "rgba(255,0,16,0.5)";
+		ctx.fillStyle = "rgba(255,118,118,0.5)";
 		
 		ctx.moveTo(w/step,h);
 		

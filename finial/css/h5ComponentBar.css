@@ -1,0 +1,79 @@
+/* 柱状图组件对象样式 */
+
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #222;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    z-index: 0;
+}
+.iphone{
+    width: 340px;
+    height: 540px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -170px;
+    margin-top: -270px;   
+    z-index: 1;
+}
+
+.h5_component_bar{
+    margin-top: -100px;
+}
+.h5_component_bar .line{
+    margin: 15px 10px;
+    clear: both;
+    height: 15px;
+    line-height: 15px;
+}
+.h5_component_bar .line .name{
+    float: left;
+    width: 60px;
+    height: 20px;
+    text-align: right;
+    margin-right: 10px;
+}
+.h5_component_bar .line .rate{
+    float: left;
+    height: 15px;
+    margin-right: 15px;
+    position: relative;    
+}
+.h5_component_bar .line .rate .bg{
+    width: 0%;
+    opacity: 0;
+    -webkit-transition: all 1s .7s;
+    transition: all 1s .7s;    
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.h5_component_bar.h5_component_bar_load .line .rate .bg{
+    width: 100%;
+    opacity: 1;
+}
+.h5_component_bar.h5_component_bar_leave .line .rate .bg{
+    width: 0%;
+    opacity: 0;
+}
+
+.h5_component_bar .line .per{
+    float: left;
+    opacity: 0;
+    -webkit-transition: all .5s 1.5s;
+    transition: all .5s 1.5s;    
+    height: 15px;
+    line-height: 15px;   
+}
+.h5_component_bar.h5_component_bar_load .line .per{
+    float: left;
+    opacity: 1;   
+}
+.h5_component_bar.h5_component_bar_leave .line .per{
+    float: left;
+    opacity: 0;   
+}

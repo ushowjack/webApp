@@ -35,6 +35,7 @@
 	html,body{
 		margin: 0;
 		padding: 0;
+		width: 100%;
 	}
 	.fp-tableCell{
 		overflow: hidden;
@@ -80,10 +81,14 @@
 	$(function () {
 		var h5 = new H5();
 		h5.whenAddComponent = function () {
+			// debugger;
 			this.addComponent("footer",{
 					center: true,
-					width : 640,
-					height: 40,
+					// 由于图片宽度不够，设置页面的宽度
+					// 为组件的宽度
+					// 图片高度是宽度的0.0625倍
+					width : $("html").width() * 2,
+					height: $("html").width() * 2 * 0.0625,
 					bg    : "./image/footer.png",
 
 					css:{
@@ -92,7 +97,7 @@
 						zIndex : 99, 
 					},
 					animateIn: {
-						bottom: -1,
+						bottom: -2,
 						opacity: 1
 					},
 					animateOut: {
@@ -585,6 +590,7 @@
                 delay: 1800
 			})
 
+
 		.addPage("page")
 			.addComponent("caption",{
 				text  : "课程难度分布"
@@ -614,6 +620,12 @@
 				// bg:"../image/p1_people.png",
 				center: true,
 			})
+
+
+
+	
+
+
 		.addPage("tail")
 			.addComponent("logo",{
 				center: true,
@@ -688,6 +700,7 @@
 					$.fn.fullpage.moveTo(1);
 				}
 			})
+		
 
 		.loader();
 

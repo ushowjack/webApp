@@ -14,28 +14,14 @@
 
 <!-- 获取H5的相关资源 内容管理对象-->
 <script src="./component/H5.js"></script>
+<script src="./component/h5Loading.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/H5.css">
-
-
-<!-- 获取组件的相关资源文件 -->
-<script>
-	//获取组件文件名
-	var res = ["Base","Point","Bar","Polyline","Radar","Pie","Ring"];
-
-	var html = [];
-	for(var i = 0; i < res.length; i++){
-		html.push("<script src='./component/h5Component"+res[i]+".js'><\/script>");
-		html.push("<link rel='stylesheet' type='text/css' href='./css/h5Component"+res[i]+".css'>");
-	}
-	// 写入document里面
-	document.write(html.join(" "));
-
-</script>
 <style type="text/css">
 	html,body{
 		margin: 0;
 		padding: 0;
 		width: 100%;
+		height: 100%;
 	}
 	.fp-tableCell{
 		overflow: hidden;
@@ -76,7 +62,88 @@
 		font-size: 20px;
 		color: #fff;
 	}
+	.loading{
+		width: 50px;
+		height: 50px;
+		margin: auto;
+		position: relative;
+		top: 50%;
+		margin-top: -50px;
+	}
+
+	.loading-point0{
+		width: 100%;
+		height: 100%;
+		background: #295ED4;
+		border-radius: 50%;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-animation: bound 2s infinite 0s;
+
+	}
+	.loading-point1{
+		width: 100%;
+		height: 100%;
+		background: #295ED4;
+		border-radius: 50%;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-animation: bound 2s infinite 1s;
+
+	}
+	@keyframes bound{
+		50%{
+			transform : scale(1);
+
+		}
+		0%,100%{
+			transform : scale(0);
+
+		}
+	}
+	.loading-per{
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		bottom: -20px;
+		color: #295ED4;
+
+
+	}
 </style>
+
+
+
+<body>
+
+	<div class="loading">
+
+		<div class="loading-point0"></div>
+		<div class="loading-point1"></div>
+		<div class="loading-per">0%</div>
+
+	</div>
+	
+
+<!-- 获取组件的相关资源文件 -->
+<script>
+	//获取组件文件名
+	var res = ["Base","Point","Bar","Polyline","Radar","Pie","Ring"];
+
+	var html = [];
+	for(var i = 0; i < res.length; i++){
+		html.push("<script src='./component/h5Component"+res[i]+".js'><\/script>");
+		html.push("<link rel='stylesheet' type='text/css' href='./css/h5Component"+res[i]+".css'>");
+	}
+	// 写入document里面
+	document.write(html.join(" "));
+</script>
+
+<!-- 导入页面和组件 -->
 <script type="text/javascript">
 	$(function () {
 		var h5 = new H5();
@@ -106,6 +173,8 @@
 					},
 				});
 		}
+
+		
 		h5
 		.addPage("face")
 			.addComponent("topic",{
@@ -441,7 +510,6 @@
 
 			})
 
-
 		.addPage("page")
 			.addComponent("caption",{
 				text  : "报名人数过万"
@@ -590,7 +658,6 @@
                 delay: 1800
 			})
 
-
 		.addPage("page")
 			.addComponent("caption",{
 				text  : "课程难度分布"
@@ -620,11 +687,6 @@
 				// bg:"../image/p1_people.png",
 				center: true,
 			})
-
-
-
-	
-
 
 		.addPage("tail")
 			.addComponent("logo",{
@@ -706,8 +768,6 @@
 
 	})
 </script>
-
-<body>
 	
 </body>
 </html>

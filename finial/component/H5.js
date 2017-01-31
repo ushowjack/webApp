@@ -17,6 +17,7 @@ var H5 = function () {
 		if(typeof this.whenAddComponent === "function"){
 			this.whenAddComponent();	
 		} 
+		// 这里的this是指H5对象本身
 		return this;
 	}
 	// 添加组件方法
@@ -55,6 +56,7 @@ var H5 = function () {
 				// statements_def
 				break;
 		}
+		// 选择最后的一页添加组件
 		page = this.pageArr.slice(-1)[0];
 		page.append(component);
 		
@@ -64,6 +66,11 @@ var H5 = function () {
 
 	// H5页面初始化方法
 	this.loader = function (page) {
+
+		if ( typeof H5Loading === "function") {
+			return this;
+		}
+		
 		this.elem.fullpage({
 
 			onLeave:function (index,nextIndex,direction) {
@@ -73,10 +80,15 @@ var H5 = function () {
 				$(this).find(".h5_component").trigger('onLoad');
 			}
 		});	
+
+		// this.elem指的是h5的DOM本身
 		this.elem.show();
 		if (page) {
 			$.fn.fullpage.moveTo(page);
 		}
 	}
+
+	// new一个新对象，没有return的话返回整个函数作为对象，如果有return的话，返回return的对象，
+	// 这里return this其实是没有必要的，因为返回的也是h5对象本身。但是为了保持代码一致性而已。
 	return this;
 }

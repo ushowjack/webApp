@@ -1,23 +1,5 @@
 /* 散点图组件对象样式 */
 
-body{
-	padding: 0px;
-	margin: 0px;
-	background: #222;
-	font-size: 12px;
-	z-index: 0;
-}
-.iphone{
-	width: 340px;
-	height: 540px;
-	background: #fff;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -170px;
-	margin-top: -270px;   
-	z-index: 1;
-}
 
 .h5_component_point {
 	bottom: 40%;

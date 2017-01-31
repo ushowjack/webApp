@@ -147,6 +147,8 @@
 <script type="text/javascript">
 	$(function () {
 		var h5 = new H5();
+		var images = ['./image/page_bg.png','./image/page_caption_bg.png',"./image/footer.png","./image/face_logo.png", "./image/face_slogan.png","./image/face_img_left.png","./image/face_img_right.png", "./image/description_bg.gif","./image/p1_people.png",
+"./image/tail_logo.png","./image/tail_slogan.png", "./image/tail_share.png", "./image/tail_back.png"];
 		h5.whenAddComponent = function () {
 			// debugger;
 			this.addComponent("footer",{
@@ -764,7 +766,7 @@
 			})
 		
 
-		.loader([ "./image/tail_back.png","./image/tail_share.png", "./image/tail_slogan.png"]);
+		.loader(images);
 
 	})
 </script>

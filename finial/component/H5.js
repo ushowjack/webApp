@@ -65,12 +65,13 @@ var H5 = function () {
 	}
 
 	// H5页面初始化方法
-	this.loader = function (page) {
+	this.loader = function (image) {
 
 		if ( typeof H5Loading === "function") {
+			H5Loading(image);
 			return this;
 		}
-		
+
 		this.elem.fullpage({
 
 			onLeave:function (index,nextIndex,direction) {

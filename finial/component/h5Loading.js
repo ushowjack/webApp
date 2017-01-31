@@ -5,7 +5,7 @@ var H5Loading = function (image) {
 		img.onload = function () {
 			count ++;
 			$(".loading-per").html(parseInt(count/image.length *100)+"%");
-			console.log(parseInt(count/image.length *100)+"%");
+			// console.log(parseInt(count/image.length *100)+"%");
 		};
 		img.src = image[i];
 	}

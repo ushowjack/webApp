@@ -69,24 +69,24 @@ var H5 = function () {
 
 		if ( typeof H5Loading === "function") {
 			H5Loading(image);
-			return this;
+			// return this;
 		}
 
-		this.elem.fullpage({
+		// this.elem.fullpage({
 
-			onLeave:function (index,nextIndex,direction) {
-				$(this).find(".h5_component").trigger('onLeave');
-			},
-			afterLoad:function (anchorLink,index) {
-				$(this).find(".h5_component").trigger('onLoad');
-			}
-		});	
+		// 	onLeave:function (index,nextIndex,direction) {
+		// 		$(this).find(".h5_component").trigger('onLeave');
+		// 	},
+		// 	afterLoad:function (anchorLink,index) {
+		// 		$(this).find(".h5_component").trigger('onLoad');
+		// 	}
+		// });	
 
-		// this.elem指的是h5的DOM本身
-		this.elem.show();
-		if (page) {
-			$.fn.fullpage.moveTo(page);
-		}
+		// // this.elem指的是h5的DOM本身
+		// this.elem.show();
+		// if (page) {
+		// 	$.fn.fullpage.moveTo(page);
+		// }
 	}
 
 	// new一个新对象，没有return的话返回整个函数作为对象，如果有return的话，返回return的对象，

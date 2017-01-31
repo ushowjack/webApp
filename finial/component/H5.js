@@ -68,7 +68,7 @@ var H5 = function () {
 	this.loader = function (image) {
 
 		if ( typeof H5Loading === "function") {
-			H5Loading(image);
+			H5Loading.apply(this,arguments);
 			return this;
 		}
 
@@ -84,9 +84,9 @@ var H5 = function () {
 
 		// this.elem指的是h5的DOM本身
 		this.elem.show();
-		// if (page) {
-		// 	$.fn.fullpage.moveTo(page);
-		// }
+		if (page) {
+			$.fn.fullpage.moveTo(page);
+		}
 	}
 
 	// new一个新对象，没有return的话返回整个函数作为对象，如果有return的话，返回return的对象，
